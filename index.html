@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тестовое задание</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <main class="app-container">
+    <!-- Левая панель с номерацией вопроса -->
+    <aside class="sidebar" id="sidebar">
+    </aside>
+
+
+    <section class="content-area">
+    <div class="question-card" id="question-card">
+        
+        <!-- Блок с картинкой -->
+        <div class="image-container">
+            <img src="" alt="Изображение вопроса" id="question-image" class="question-image">
+        </div>
+
+        <!-- Блок с заданием и вводом -->
+        <div class="input-container">
+            <p class="task-text" id="task-text">Напечатай: </p>
+            <div class="answer-row">
+                <input type="text" id="answer-input" class="answer-input" placeholder="">
+                <button class="check-btn" id="check-btn">
+                    <img src="images/svg/check-btn.svg" id="check-icon" class="check-icon" alt="Проверить">
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Кнопка закрытия или перезапуска -->
+    <button class="reset-btn" id="reset-btn" aria-label="Перезапустить тренажёр">
+      <img src="images/svg/reset-btn.svg" alt="Сброс" class="reset-icon">
+    </button>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

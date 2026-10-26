@@ -1,0 +1,342 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Главный контейнер */
+body{
+    font-family: Arial, sans-serif;
+    background-color: #57E3F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container{
+    position: relative;
+    display: flex;
+    width: 1350px;
+    height: 650px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    border: 5px solid #38B1C2;
+    padding: 20px;
+}
+
+/* Левая панель с нумерацией вопросов */
+.sidebar {
+    position: absolute; 
+    left: -80px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    padding: 20px 15px; 
+    background-color: #ffffff;
+    border: 5px solid #38B1C2; 
+    border-radius: 20px; 
+    z-index: 10; 
+}
+
+/* Номера вопроса */
+.nav-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: rgba(218, 164, 250, 1);
+    color: #000000;
+    border: 3px solid #969695;
+    font-size: 55px;
+    font-weight:700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.nav-btn.active {
+    background-color:#B480D3;
+}
+
+
+.nav-btn:disabled {
+    background-color: #ffffff;
+    color: #000000;
+    cursor: not-allowed;
+}
+
+
+/* Кнопка (крестик) */
+.reset-btn {
+    position: absolute;
+    bottom: -25px; 
+    right: -90px;  
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 80px; 
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset-icon {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+
+.content-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-left: 0px; 
+    width: 100%;
+}
+
+/* Карточка вопроса */
+.question-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Картинка */
+.image-container {
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.question-image {
+    width: 400px; 
+    height: 400px;
+    user-select: none;   
+    -webkit-user-drag: none;
+}
+
+/* Текст задания */
+.task-text {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+    align-self: flex-start; 
+    margin-left: 5px; 
+}
+
+/* Строка с полем ввода и кнопкой */
+.answer-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Поле ввода */
+.answer-input {
+    width: 400px;
+    height: 60px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 0 20px;
+    outline: none;
+}
+
+/* Кнопка с галочкой */
+.check-btn {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Таблица */
+.table-wrapper {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    table-layout: fixed; 
+}
+
+.results-table th, 
+.results-table td {
+    border: 1px solid #cccccc;
+    padding: 15px 10px;
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+.results-table th {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000000;
+    text-transform: uppercase;
+    background-color: #ffffff;
+}
+
+.results-table td {
+    font-size: 20px;
+    color: #000000;
+}
+
+.table-img {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    user-select: none;       
+    -webkit-user-drag: none;
+}
+
+.result-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.result-icon.correct {
+    color: #2E7D32; 
+}
+
+.result-icon.incorrect {
+    color: #C30000; 
+}
+
+.vowel {
+    color: #E53935; 
+}
+
+   /* АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ */
+
+@media (max-width: 768px) {
+    /* 1. Общий контейнер */
+    body {
+        align-items: flex-start; 
+        padding: 10px;
+    }
+
+    .app-container {
+        width: 100%;
+        height: auto; 
+        min-height: 90vh;
+        flex-direction: column; 
+        padding: 15px;
+        border-width: 3px;
+    }
+
+    /* 2. Боковая панель с номерами */
+    .sidebar {
+        position: static; 
+        transform: none;
+        flex-direction: row; 
+        justify-content: center;
+        flex-wrap: wrap; 
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        width: 45px; 
+        height: 45px;
+        font-size: 24px; 
+    }
+
+    /* 3. Рабочая область */
+    .content-area {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .question-image {
+        width: 100%; 
+        max-width: 300px; 
+        height: auto;
+        max-height: 300px;
+    }
+
+    .task-text {
+        font-size: 18px;
+        text-align: center;
+        align-self: center;
+        margin-left: 0;
+    }
+
+    /* 4. Поле ввода и кнопка */
+    .answer-row {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+    }
+
+    .answer-input {
+        width: 100%;
+        font-size: 18px;
+        height: 50px;
+    }
+
+    .check-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* 5. Кнопка сброса (крестик) */
+    .reset-btn {
+        bottom: 10px;
+        right: 10px;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* 6. Таблица на странице ответов */
+    .results-table th, 
+    .results-table td {
+        font-size: 12px; 
+        padding: 8px 5px;
+    }
+
+    .table-img {
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    .result-icon {
+        font-size: 24px;
+    }
+}

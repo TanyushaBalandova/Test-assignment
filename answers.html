@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица ответов</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <main class="app-container results-container">
+
+        <button class="reset-btn" id="reset-btn" aria-label="Перезапустить">
+            <img src="images/svg/reset-btn.svg" alt="Сброс" class="reset-icon">
+        </button>
+
+        <!-- Таблица с ответами -->
+        <div class="table-wrapper">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th id="th-num">#</th>
+                        <th id="th-img">КАРТИНКА</th>
+                        <th id="th-correct">ПРАВИЛЬНЫЙ ОТВЕТ</th>
+                        <th id="th-user">ТВОЙ ОТВЕТ</th>
+                        <th id="th-result">РЕЗУЛЬТАТ</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body">
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    <script src="js/answers.js"></script>
+</body>
+
+</html>
